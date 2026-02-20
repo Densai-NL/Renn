@@ -1,0 +1,6 @@
+@renn_api_HostAddress = http://localhost:5254
+
+GET {{renn_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
