@@ -27,8 +27,8 @@ class StatsView extends StatelessWidget {
             child: Text("Last activities", style: TextStyle(fontSize: 24)),
           ),
           ListView.builder(
-            // physics: ScrollPhysics(),
-            scrollDirection: Axis.vertical,
+            physics: NeverScrollableScrollPhysics(),
+            // scrollDirection: Axis.vertical,
             itemCount: 20,
             itemBuilder: (context, index) => PrevActivityView(),
             shrinkWrap: true,

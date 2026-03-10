@@ -24,50 +24,49 @@ class _LiveActivityViewState extends State<LiveActivityView> {
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Row(
+              child: Column(
                 spacing: 8.0,
                 children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 50.0,
-                      child: ElevatedButton.icon(
-                        style: ButtonStyle(
-                          backgroundColor: WidgetStateProperty.all(
-                            const Color.fromARGB(255, 54, 97, 56),
-                          ),
+                  SizedBox(
+                    height: 50.0,
+                    width: size.width,
+                    child: ElevatedButton.icon(
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateProperty.all(
+                          const Color.fromARGB(255, 54, 97, 56),
                         ),
-                        onPressed: () {},
-                        label: Text(
-                          "Start recording",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
-                        ),
-                        icon: Icon(
-                          Icons.play_arrow,
-                          size: 24,
-                          color: Colors.white,
-                        ),
+                      ),
+                      onPressed: () {},
+                      label: Text(
+                        "Start recording",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                      icon: Icon(
+                        Icons.play_arrow,
+                        size: 24,
+                        color: Colors.white,
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: SizedBox(
-                      height: 50.0,
-                      child: ElevatedButton.icon(
-                        style: ButtonStyle(
-                          backgroundColor: WidgetStateProperty.all(
-                            const Color.fromARGB(255, 77, 134, 80),
-                          ),
+
+                  SizedBox(
+                    height: 50.0,
+                    width: size.width,
+                    child: ElevatedButton.icon(
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateProperty.all(
+                          const Color.fromARGB(255, 77, 134, 80),
                         ),
-                        onPressed: () {},
-                        label: Text(
-                          "Suggest route",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
-                        ),
-                        icon: Icon(
-                          Icons.lightbulb,
-                          size: 24,
-                          color: Colors.white,
-                        ),
+                      ),
+                      onPressed: () {},
+                      label: Text(
+                        "Suggest route",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                      icon: Icon(
+                        Icons.lightbulb,
+                        size: 24,
+                        color: Colors.white,
                       ),
                     ),
                   ),
