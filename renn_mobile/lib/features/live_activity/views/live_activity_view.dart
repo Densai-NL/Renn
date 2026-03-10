@@ -10,12 +10,71 @@ class LiveActivityView extends StatefulWidget {
 class _LiveActivityViewState extends State<LiveActivityView> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    var size = MediaQuery.of(context).size;
+    return Stack(
       children: [
-        ElevatedButton.icon(
-          onPressed: () {},
-          label: Text("Start"),
-          icon: Icon(Icons.play_arrow),
+        SizedBox(
+          width: size.width,
+          height: size.height,
+          child: Image.asset("assets/images/map.png", fit: BoxFit.cover),
+        ),
+        Positioned(
+          bottom: 0,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                spacing: 8.0,
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 50.0,
+                      child: ElevatedButton.icon(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(
+                            const Color.fromARGB(255, 54, 97, 56),
+                          ),
+                        ),
+                        onPressed: () {},
+                        label: Text(
+                          "Start recording",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                        icon: Icon(
+                          Icons.play_arrow,
+                          size: 24,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      height: 50.0,
+                      child: ElevatedButton.icon(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(
+                            const Color.fromARGB(255, 77, 134, 80),
+                          ),
+                        ),
+                        onPressed: () {},
+                        label: Text(
+                          "Suggest route",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                        icon: Icon(
+                          Icons.lightbulb,
+                          size: 24,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ],
     );

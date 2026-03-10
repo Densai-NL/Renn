@@ -12,7 +12,11 @@ class MainNav extends StatefulWidget {
 
 class _MainNavState extends State<MainNav> {
   int _selectedIndex = 1;
-  final List<Widget> _pages = [GroupView(), LiveActivityView(), ProfileView()];
+  final List<(Widget, String)> _pages = [
+    (GroupView(), "Meetups"),
+    (LiveActivityView(), ""),
+    (ProfileView(), "Profile"),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -23,8 +27,10 @@ class _MainNavState extends State<MainNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Renn")),
-      body: _pages.elementAt(_selectedIndex),
+      appBar: _selectedIndex == 1
+          ? null
+          : AppBar(title: Text(_pages.elementAt(_selectedIndex).$2)),
+      body: _pages.elementAt(_selectedIndex).$1,
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.group), label: 'Groups'),
